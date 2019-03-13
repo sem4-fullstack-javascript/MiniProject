@@ -1,3 +1,4 @@
 .vscode
+pushScript.cmd
 node_modules
 settings.js
