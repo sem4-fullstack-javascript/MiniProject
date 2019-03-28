@@ -2,3 +2,5 @@
 pushScript.cmd
 node_modules
 settings.js
+coverage
+.nyc_output
