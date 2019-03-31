@@ -10,7 +10,7 @@ const LocationBlogSchema = new Schema({
 	},
 	author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 	//Why not ref below
-	likedBy: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	likedBy: [{ type: Schema.Types.ObjectId, ref: 'User',unique:true }],
 	created: { type: Date, default: Date.now },
 	lastUpdated: Date
 });
