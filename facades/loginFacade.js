@@ -25,8 +25,8 @@ async function login(userName, password, longitude, latitude, distance) {
 		friends: nearbyFriendsPositions.map(friendPos => {
 			return {
 				username: friendPos.user.userName,
-				latitude: friendPos.loc.coordinates[1],
-				longitude: friendPos.loc.coordinates[0]
+				latitude: friendPos.loc.coordinates[0],
+				longitude: friendPos.loc.coordinates[1]
 			};
 		})
 	};
