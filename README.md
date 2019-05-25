@@ -8,3 +8,6 @@ Link to assignment for part 2 [here](https://docs.google.com/document/d/1s_W83hY
 
 ## Part 3
 Link to assignment for part 3 [here](https://docs.google.com/document/d/1rePwGnH53JpAnjctJV6ew-x43HA96W-8R0dnIIqvCcc/edit)
+
+## Part 4
+Link to assignment for part 4 [here](https://docs.google.com/document/d/11i1RJAfjQMgU-6RTLjcJNYyXRtAQzZOJFI-j4Kf2LVA/edit)
