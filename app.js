@@ -1,15 +1,24 @@
-var connect = require('./dbConnect');
-connect(require('./settings').DEV_DB_URI);
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
 
-var app = express();
+const app = express();
+
+//graphql
+const graphqlHTTP = require('express-graphql');
+const { schema, typeDefs, resolvers } = require('./graphql/schema');
+
+//apollo server
+const { ApolloServer } = require('apollo-server-express');
+const server = new ApolloServer({ typeDefs, resolvers });
+server.applyMiddleware({ app, path: '/apollo' });
+
+//mongoose connection
+const connect = require('./dbConnect');
+connect(require('./settings').DEV_DB_URI);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,9 +30,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api', apiRouter);
+//express routes
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+app.use('/api', require('./routes/api'));
+
+app.use('/graphql', graphqlHTTP({ schema, graphiql: true }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
