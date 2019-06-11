@@ -1,6 +1,6 @@
-const blogFacade = require('./facades/blogFacade');
-const userFacade = require('./facades/userFacade');
-const loginFacade = require('./facades/loginFacade');
+const blogFacade = require('./../facades/blogFacade');
+const userFacade = require('./../facades/userFacade');
+const loginFacade = require('./../facades/loginFacade');
 const { DateTime } = require('@okgrow/graphql-scalars');
 
 module.exports = {
