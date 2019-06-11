@@ -82,9 +82,9 @@ router.post('/blog/add', async function(req, res, next) {
 	var pos = req.body.pos;
 	var author = req.body.author;
 
-	var log = await blogFacade.addLocationBlog(info, img, pos, author);
-	console.log(log);
-	res.json(log);
+	var blog = await blogFacade.addLocationBlog(info, img, pos, author);
+	console.log(blog);
+	res.json(blog);
 });
 
 /* POST Like a Blog */
