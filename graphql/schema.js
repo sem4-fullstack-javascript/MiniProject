@@ -77,6 +77,7 @@ const typeDefs = `
         longitude: Float!
         latitude: Float!
         author: ID!
+        img: String!
     }
 
     input UserInput {
