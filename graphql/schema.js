@@ -22,7 +22,7 @@ const typeDefs = `
         _id: ID
         firstName: String
         lastName: String
-        userName: 
+        userName: String
         email: String
         job: [Job]
         created: DateTime
@@ -85,6 +85,7 @@ const typeDefs = `
         firstName: String!
         lastName: String!
         userName: String!
+        email: String!
         password: String!
     }
 `;
