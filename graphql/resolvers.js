@@ -35,7 +35,7 @@ module.exports = {
 		}
 	},
 	Mutation: {
-		createLocationBlog: (_, { info, longitude, latitude, author }) => {
+		createLocationBlog: (_, { info, longitude, latitude, img, author }) => {
 			const pos = { latitude, longitude };
 			return blogFacade.addLocationBlog(info, img, pos, author);
 		},
