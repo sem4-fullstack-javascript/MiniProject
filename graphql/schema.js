@@ -73,11 +73,11 @@ const typeDefs = `
     }
 
     input LocationBlogInput {
-        info: String!
-        longitude: Float!
-        latitude: Float!
-        author: ID!
-        img: String!
+        info: String
+        longitude: Float
+        latitude: Float
+        author: ID
+        img: String
     }
 
     input UserInput {
