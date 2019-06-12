@@ -22,7 +22,8 @@ const typeDefs = `
         _id: ID
         firstName: String
         lastName: String
-        userName: String
+        userName: 
+        email: String
         job: [Job]
         created: DateTime
         lastUpdated: DateTime
